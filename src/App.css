@@ -1,5 +1,9 @@
 :root {
   --background-color: rgb(36, 35, 42);
+  --transform-move: 300ms ease-in-out;
+  --first-main-color: rgba(60, 59, 63, 0.725);
+  --second-main-color: hsl(0, 0%, 70%);
+  --elements-padding: 15px;
 }
 
 * {

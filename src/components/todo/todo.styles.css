@@ -4,15 +4,13 @@
   align-items: center;
 
   margin: 20px;
-
-  --elements-padding: 15px;
 }
 
 .home-button {
   padding: var(--elements-padding);
   border-radius: 5px;
 
-  box-shadow: 0px 0px 0px black;
+  box-shadow: 3px 3px 5px black;
 }
 
 .home-button::after {
@@ -81,16 +79,18 @@
 .todo-button-2 {
   width: 100%;
   border: 3px solid black;
+  cursor: pointer;
 
   background-color: hsl(249, 9%, 50%);
   color: black;
 }
 
 .todoItem {
-  margin: 0px 200px;
+  margin: 20px 200px;
   padding: 50px;
   border-radius: 20px;
   text-align: center;
 
-  background-color: rgba(60, 59, 63, 0.725);
+  background-color: var(--first-main-color);
+  box-shadow: 3px 3px 5px black;
 }
