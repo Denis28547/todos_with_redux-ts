@@ -9,7 +9,7 @@ import "./user.styles.css";
 
 const Users: FC = () => {
   const dispatch = useAppDispatch();
-  const { users, loading } = useAppSelector((state) => state.user);
+  const { users, loading, error } = useAppSelector((state) => state.user);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -17,6 +17,10 @@ const Users: FC = () => {
 
   if (loading) {
     return <h1>LOADING...</h1>;
+  }
+
+  if (error) {
+    return <h1>{error}</h1>;
   }
 
   return (
