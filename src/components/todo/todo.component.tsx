@@ -81,13 +81,18 @@ const TodoComponent: FC = () => {
           </button>
         </div>
       </div>
-      {allTodos.map((todo) => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          deleteOneTodo={(id) => dispatch(deleteTodo(id))}
-        />
-      ))}
+
+      <div className="todoItem">
+        {allTodos.length !== 0
+          ? allTodos.map((todo) => (
+              <TodoItem
+                key={todo.id}
+                todo={todo}
+                deleteOneTodo={(id) => dispatch(deleteTodo(id))}
+              />
+            ))
+          : "NO TODOS"}
+      </div>
     </>
   );
 };

@@ -13,28 +13,19 @@ const TodoItem: FC<TodoItemPayload> = ({ todo, deleteOneTodo }) => {
   const { id, title, completed } = todo;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "10px",
-        border: "3px solid lightgrey",
-      }}
-    >
-      <h3 style={{ paddingRight: "10px" }}>{title}</h3>
+    <div className="todoItem-container">
+      <div
+        className="todoItem-completed container-item"
+        style={{
+          backgroundColor: completed ? "#7FFF00" : "red",
+        }}
+      >
+        {completed ? "✓" : "×"}
+      </div>
+      <p className="todoItem-title container-item">{title} </p>
       <button
         onClick={() => deleteOneTodo(id)}
-        style={{
-          backgroundColor: completed ? "#7FFF00" : "#696969",
-          border: "none",
-          borderRadius: "25%",
-          position: "absolute",
-          right: "100px",
-          height: "75px",
-          width: "75px",
-          color: "white",
-        }}
+        className="todoItem-delete-button container-item"
       >
         &#10006;
       </button>
