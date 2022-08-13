@@ -1,7 +1,3 @@
-:root {
-  --transform-move: 300ms ease-in-out;
-}
-
 .custom-button {
   position: relative;
 
@@ -10,7 +6,7 @@
 
   font-weight: 700;
   color: rgba(255, 255, 255, 0.892);
-  background-color: hsl(0, 0%, 70%);
+  background-color: var(--second-main-color);
   text-decoration: none;
 
   transition: var(--transform-move);
