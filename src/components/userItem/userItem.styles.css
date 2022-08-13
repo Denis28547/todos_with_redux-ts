@@ -1,0 +1,16 @@
+.userItem-home-button {
+  top: 20px;
+  padding: var(--elements-padding);
+}
+
+.userItem-text {
+  margin: 70px;
+  padding: 100px;
+  border-radius: 20px;
+
+  background-color: var(--first-main-color);
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
