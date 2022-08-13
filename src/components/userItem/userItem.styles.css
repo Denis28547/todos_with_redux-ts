@@ -3,6 +3,11 @@
   padding: var(--elements-padding);
 }
 
+.userItem-home-button::after {
+  height: 5px;
+  overflow: hidden;
+}
+
 .userItem-text {
   margin: 70px;
   padding: 100px;

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
 import { userType } from "./user.types";
@@ -6,14 +6,14 @@ import { userType } from "./user.types";
 export const fetchUsers = createAsyncThunk(
   "users/fetchUsers",
 
-  async function () {
+  async function (_, thunkAPI) {
     try {
       const response = await axios.get(
         "https://jsonplaceholder.typicode.com/users"
       );
       return response.data;
-    } catch (error) {
-      return error;
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue("Loading in fetching users");
     }
   }
 );
@@ -21,7 +21,7 @@ export const fetchUsers = createAsyncThunk(
 type initialStateProps = {
   users: userType[];
   loading: boolean;
-  error: null | Error;
+  error: any;
 };
 
 const initialState: initialStateProps = {
@@ -35,16 +35,25 @@ const userSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchUsers.pending, (state) => {
+    builder.addCase(fetchUsers.pending.type, (state) => {
       state.loading = true;
     });
 
-    builder.addCase(fetchUsers.fulfilled, (state, action) => {
-      state.loading = false;
-      state.users = action.payload;
-    });
+    builder.addCase(
+      fetchUsers.fulfilled.type,
+      (state, action: PayloadAction<userType[]>) => {
+        state.loading = false;
+        state.users = action.payload;
+      }
+    );
 
-    builder.addCase(fetchUsers.rejected, (state, action) => {});
+    builder.addCase(
+      fetchUsers.rejected.type,
+      (state, action: PayloadAction<string>) => {
+        state.loading = false;
+        state.error = action.payload;
+      }
+    );
   },
 });
 
