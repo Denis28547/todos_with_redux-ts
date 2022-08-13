@@ -1,0 +1,15 @@
+:root {
+  --background-color: rgb(36, 35, 42);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  color: #fff;
+  background: var(--background-color);
+  font: 100% system-ui;
+}

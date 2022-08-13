@@ -1,0 +1,42 @@
+:root {
+  --transform-move: 300ms ease-in-out;
+}
+
+.custom-button {
+  position: relative;
+
+  border-radius: 15px;
+  box-shadow: 0px 5px 2px black;
+
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.892);
+  background-color: hsl(0, 0%, 70%);
+  text-decoration: none;
+
+  transition: var(--transform-move);
+
+  overflow: hidden;
+}
+
+.custom-button::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+
+  background-color: #00ffff;
+
+  transition: var(--transform-move);
+
+  transform: scaleX(0);
+}
+
+.custom-button:hover {
+  transform: scale(1.02);
+}
+
+.custom-button:hover::after {
+  transform: scaleX(1);
+}
