@@ -9,8 +9,6 @@
 }
 
 .home-button {
-  position: relative;
-
   padding: var(--elements-padding);
   border-radius: 5px;
 
@@ -86,4 +84,13 @@
 
   background-color: hsl(249, 9%, 50%);
   color: black;
+}
+
+.todoItem {
+  margin: 0px 200px;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+
+  background-color: rgba(60, 59, 63, 0.725);
 }

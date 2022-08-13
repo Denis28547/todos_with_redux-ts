@@ -1,0 +1,38 @@
+.todoItem-container {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-auto-rows: minmax(75px, auto);
+  margin-bottom: 10px;
+  /* align-items: center; */
+  /* align-content: center; */
+  /* justify-items: center; */
+  text-align: center;
+}
+
+.container-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoItem-completed {
+  font-size: 30px;
+  color: black;
+}
+
+.todoItem-title {
+  background-color: hsl(0, 0%, 70%);
+  font-size: 25px;
+}
+
+.todoItem-delete-button {
+  background-color: hsl(0, 0%, 80%);
+  font-size: 25px;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+
+.todoItem-delete-button:focus,
+.todoItem-delete-button:hover {
+  font-size: 20px;
+}
